@@ -1,0 +1,30 @@
+<html>
+<h3>Add Publisher</h3>
+<form id="addPublisher" action="/publishers/add" method="post">
+            name: <input type="text" name="publisherName"><br>
+			headquarters: <input type="text" name="headquarters"><br>
+			<!--- Checkbox multi select code from https://stackoverflow.com/questions/19206919/how-to-create-checkbox-inside-dropdown --->
+            games: <div id="games-multi-select" class="checkbox-div" tabindex="100">
+				<span class="checkbox-main">Select Games</span>
+				<ul class="checkbox-items">
+				{{#each games}}
+					<li> <input type="checkbox" name="gamesInput" value="{{gameID}}">{{title}}</li>
+				{{/each}}
+				</ul>
+			</div></td><br>
+			<!--- Checkbox multi select code from https://stackoverflow.com/questions/19206919/how-to-create-checkbox-inside-dropdown --->
+			employees: <div id="employees-multi-select" class="checkbox-div" tabindex="100">
+				<span class="checkbox-main">Select Employees</span>
+				<ul class="checkbox-items">
+				{{#each players}}
+					<li> <input type="checkbox" name="employeesInput" value="{{playerID}}">{{firstName}} {{lastName}}</li>
+				{{/each}}
+				</ul>
+			</div></td>
+</select><br>
+            <input type="submit" value="Submit">
+</form>
+
+<br>
+
+</html>

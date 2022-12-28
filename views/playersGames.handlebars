@@ -1,0 +1,33 @@
+<html>
+<h3>Player's Game Libraries</h3>
+
+<table>
+    <thead>
+    <th>Player Gamertag</th>
+    <th>Title</th>
+    </thead>
+    <tbody>
+    {{#each playersAndGames}}
+        <tr>
+            <td>{{playerID}}</td>
+            <td>{{gameID}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+<form id="addPlayersGame" action="/playersGames" method="post">
+    Gamertag: <select name="gamerTag">
+    {{#each gamerTags}}
+        <option value="{{playerID}}">{{gamerTag}}</option>
+    {{/each}}
+    </select><br>
+    Title: <select name="titles">
+    {{#each titles}}
+        <option value="{{gameID}}">{{title}}</option>
+    {{/each}}
+    </select><br>
+    <input type="submit" value="Submit">
+</form>
+
+</html>

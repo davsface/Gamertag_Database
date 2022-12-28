@@ -1,0 +1,49 @@
+<html>
+<h3>Players</h3><br>
+
+<form id='search_player' action='' method=''>
+    <label> Search player by Gamertag:</label>
+    <input id='playersGamertag' type='text' name='playersGamertag' value=''>
+    <input type="button" value="Search" onclick="searchPlayer()">
+</form>
+
+<table class="p">
+    <thead>
+    <th>ID</th>
+    <th>Email</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gamer Tag</th>
+    <th>Employer</th>
+    </thead>
+    <tbody>
+    {{#each players}}
+        <tr>
+            <td>{{playerID}}</td>
+            <td>{{email}}</td>
+            <td>{{firstName}}</td>
+            <td>{{lastName}}</td>
+            <td>{{gamerTag}}</td>
+            <td>{{employer}}</td>
+            <td><button onclick="deletePlayer({{playerID}})">Delete</button></td>
+            <td><a href="/players/{{playerID}}">Update</a></td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+<form id="addPlayer" action="/players" method="post">
+            Email: <input type="text" name="email"><br>
+            First Name: <input type="text" name="firstName"><br>
+            Last Name: <input type="text" name="lastName"><br>
+            Gamertag: <input type="text" name="gamerTag"><br>
+            Employer: <select name="employer">
+            <option value="{{NULL}}">No Employer</option>
+            {{#each employer}}
+                <option value="{{publisherID}}">{{publisherName}}</option>
+            {{/each}}
+</select><br>
+            <input type="submit" value="Submit">
+</form>
+
+</html>

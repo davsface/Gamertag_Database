@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+        <script src="/static/{{this}}"></script>
+    {{/each}}
+    <title>Deep Data Miners Inc.</title>
+</head>
+<body>
+<div class="title" id="mainHeader">
+    <h2>Deep Games Data Hoard</h2>
+</div>
+<nav>
+    <ul class="menu" id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/players">Players</a></li>
+        <li><a href="/games">Games</a></li>
+        <li><a href="/playersGames">Players Games</a></li>
+        <li><a href="/Publishers">Publishers</a></li>
+        <li><a href="/Platforms">Platforms</a></li>
+		<li><a href="/platformsGames">Platforms Games</a></li>
+    </ul>
+</nav>
+<br>
+{{{body}}}
+</body>
+</html>

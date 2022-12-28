@@ -1,0 +1,22 @@
+<html lang="en">
+<h3>Add Platform</h3>
+<form id="addPlatform" action="/platforms/add" method="post">
+            name: <input type="text" name="systemName"><br>
+            manufacturer: <input type="text" name="manufacturer"><br>
+            launch year: <input type="date" name="launchYear"><br>
+            <!--- Checkbox multi select code from https://stackoverflow.com/questions/19206919/how-to-create-checkbox-inside-dropdown --->
+            games: <div id="games-multi-select" class="checkbox-div" tabindex="100">
+				<span class="checkbox-main">Select Games</span>
+				<ul class="checkbox-items">
+				{{#each games}}
+					<li> <input type="checkbox" name="gamesInput" value="{{gameID}}">{{title}}</li>
+				{{/each}}
+				</ul>
+			</div></td><br>
+            <input type="submit" value="Submit">
+</form>
+
+<br>
+
+</body>
+</html>

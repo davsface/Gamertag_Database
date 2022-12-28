@@ -1,0 +1,41 @@
+<html>
+
+    <h3>Platforms Table</h3>
+	<form id='search_platform' action="/platforms/search" method="post">
+    <table>
+        <thead>
+            <th>Search</th>
+        </thead>
+		<tbody>
+			<tr>
+				<td><input type="text" name="systemName" size="10" value=""></td>
+				<td><input type="text" name="manufacturer" size="10" value=""></td>
+				<td><input type="date" name="launchYear" size="10" value=""></td>
+				<td></td>
+				<td><input type="submit" value="Search"></td>
+			</tr>
+		</tbody>
+    </table>
+	</form>
+    <br>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Manufacturer</th>
+            <th>Launch Year</th>
+        </thead>
+		<tbody>
+		{{#each platforms}}
+			<tr>
+				<td>{{systemName}}</td>
+				<td>{{manufacturer}}</td>
+				<td>{{launchYear}}</td>
+				<td><button class="editbtn" title="click to edit entry" onclick="location.href='/platforms/edit?id={{platformID}}';">edit</button></td>
+				<td><button class="removebtn" title="click to remove entry"  onclick="location.href='/platforms/delete?id={{platformID}}';">remove</button></td>
+			</tr>
+		{{/each}}
+		</tbody>
+    </table>
+    <br>
+    <button class="addbtn" onclick="location.href='/platforms/add';" title="click to add entry">add</button>
+</html>
